@@ -1,0 +1,66 @@
+name: Deploy Client Frontend
+
+on:
+  push:
+    branches:
+      - staging
+      - lawapp/qa
+      - master
+
+jobs: 
+  deploy_qa:
+    if: github.ref == 'refs/heads/lawapp/qa'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up SSH key
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.PRIVATE_KEY }}
+
+      - name: Add GitHub to known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+      - name: Connect with VPS
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+           
+            mkdir -p ~/apps/lawapp/qa/client-frontend
+            cd ~/apps/lawapp/qa/client-frontend
+
+            
+            if [ -d ".git" ]; then
+              echo "Repository exists. Pulling changes..."
+              git add *
+              git stash
+              git pull origin lawapp/qa
+            else
+              echo "Cloning repository..."
+              git clone -b git@github.com:HashBaze/lawApp-web.git .
+            fi
+
+            
+            npm install --force
+            npm run build
+
+     
+            pid=$(pm2 pid "lawapp-client-fe-qa" 2>/dev/null)
+            if [ -n "$pid" ]; then
+              echo "Reloading application"
+              pm2 reload "lawapp-client-fe-qa"
+              pm2 save
+            else
+              echo "Starting new application"
+              pm2 start npm --name "lawapp-client-fe-qa" -- start
+              pm2 startup
+              pm2 save
+            fi
