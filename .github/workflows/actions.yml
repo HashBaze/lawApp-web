@@ -34,8 +34,8 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
            
-            mkdir -p ~/apps/lawapp/qa/client-frontend
-            cd ~/apps/lawapp/qa/client-frontend
+            mkdir -p /home/tishan/apps/lawapp
+            cd /home/tishan/apps/lawapp
 
             
             if [ -d ".git" ]; then
