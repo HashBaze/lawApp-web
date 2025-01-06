@@ -45,7 +45,7 @@ jobs:
               git pull origin lawapp/qa
             else
               echo "Cloning repository..."
-              git clone -b lawapp/qa git@github.com:HashBaze/lawApp-web.git .
+              git clone -b lawapp/qa https://github.com/HashBaze/lawApp-web.git .
             fi
 
             
