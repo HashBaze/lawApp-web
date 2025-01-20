@@ -85,36 +85,28 @@ export default function Service() {
 
     // Detailed list of services provided by the legal firm
     const services = [
+      
         {
-            title: "Family Law",
+            title: "Study the problem",
             description:
-                "We provide expert legal advice on matters related to family law, including divorce proceedings, child custody disputes, alimony arrangements, and property settlements. Our experienced attorneys are committed to offering compassionate and effective support to resolve your family issues.",
+                "Once you contact us, our support team will study your case thoroughly to understand the details and provide suitable solutions to solve your problems.",
         },
         {
-            title: "Criminal Law",
+            title: "Referral to appropriate legal counsel",
             description:
-                "Our skilled criminal defense lawyers assist clients in navigating complex criminal charges. From strategic advice to strong courtroom representation, we ensure your legal rights are protected and defended effectively.",
+                "After understanding your legal needs, we will connect you with the best-suited legal counsel from our team to ensure you receive the most effective advice and representation.",
         },
         {
-            title: "Corporate Law",
+            title: "Giving necessary advice to the client",
             description:
-                "We help businesses operate smoothly by providing legal support in contracts, mergers and acquisitions, intellectual property rights, and regulatory compliance. Our services ensure your corporate interests are safeguarded at all times.",
+                "Then our legal counsel will provide the best advice and guidance tailored to your needs, ensuring a smooth resolution for your problem.",
         },
-        {
-            title: "Immigration Law",
-            description:
-                "Whether you're applying for visas, seeking residency, or applying for citizenship, we simplify the immigration process with detailed guidance and ensure all requirements are met seamlessly.",
-        },
-        {
-            title: "Employment Law",
-            description:
-                "We advocate for fairness in the workplace by handling disputes, discrimination cases, and contract negotiations. Our legal team ensures your workplace rights are protected and upheld.",
-        },
+      
     ];
 
-    // Step-by-step process to access legal services provided by the firm
+    
     const steps = [
-        { icon: "1", text: "Start by submitting your legal query through our online form, detailing your requirements." },
+        { icon: "1", text: "Start by submitting your legal query through our contact support, providing details of your requirements." },
         { icon: "2", text: "We analyze your case and carefully match you with the most suitable lawyer based on expertise and specialization." },
         { icon: "3", text: "Receive personalized legal advice and actionable solutions tailored to your specific needs from your assigned lawyer." },
     ];
@@ -122,17 +114,17 @@ export default function Service() {
     return (
         <>
       
-            {/* Header Section introducing the services */}
+           
             <header>
-                <h1 style={styles.primaryHeading}>Our Legal Services</h1>
-                <h2 style={styles.secondaryHeading}>
+                <h1 style={styles.primaryHeading}>Our Services</h1>
+                {/* <h2 style={styles.secondaryHeading}>
                     Comprehensive Legal Advice from Seasoned Attorneys You Can Trust
-                </h2>
+                </h2> */}
             </header>
 
             {/* Section displaying available services */}
             <div style={styles.sectionContainer}>
-                <h3 style={styles.sectionTitle}>Our Services</h3>
+                {/* <h3 style={styles.sectionTitle}>Our Services</h3> */}
                 {services.map((service, index) => (
                     <div key={index} style={styles.serviceItem}>
                         <h4 style={styles.serviceTitle}>{service.title}</h4>

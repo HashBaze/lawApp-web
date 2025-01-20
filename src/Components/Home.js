@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from './Navbar'
 import BannerBackground from "../Assets/home-banner-background.png";
-import BannerImage from "../Assets/home-banner-image1.png";
+import BannerImage from "../Assets/home-banner-image2.png";
 import { FiArrowRight } from "react-icons/fi";
 import { Link } from 'react-router-dom';
 import About from './About';
@@ -19,7 +19,8 @@ export default function Home() {
         </div>
         <div className="home-text-section">
           <h1 className="primary-heading" style={{  color: 'black' , fontSize: '50px'}}>
-          Your Trusted Legal Partner, Just a Contact Away
+          {/* Your Trusted Legal Partner, Just a Contact Away */}
+          Providing reliable legal guidance to Sri Lankans worldwide
           </h1>
           <p className="primary-text" style={{   fontSize: '20px'}}>
           {/* Our expert legal team handles the prep work, so you can focus on making confident decisions */}
@@ -31,7 +32,7 @@ export default function Home() {
           </button>
           </Link>
         </div>
-        <div className="home-image-section">
+        <div className="home-image-section" style={{ transform: 'rotate(7deg)' }}>
           <img src={BannerImage} alt="" />
         </div>
       </div>
