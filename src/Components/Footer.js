@@ -45,8 +45,8 @@ export default function Footer() {
             </div>
             <div className="footer-section-columns">
               <span>
-              <Link to="/service" style={{ textDecoration: 'none', color: 'black' , marginLeft: '70px' }}>
-                Service
+              <Link to="/mobile-privacy-policy" style={{ textDecoration: 'none', color: 'black' , marginLeft: '70px' }}>
+              Mobile Privacy Policy
                 </Link>
                 </span>
 
