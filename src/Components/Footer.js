@@ -32,8 +32,8 @@ export default function Footer() {
                 </Link>
                 </span>
               <span>
-              <Link to="/contact" style={{ textDecoration: 'none', color: 'black' }} >
-                Contact Us
+              <Link to="/delete-user" style={{ textDecoration: 'none', color: 'black' }} >
+                Delete User
                 </Link>
                 </span>
             
