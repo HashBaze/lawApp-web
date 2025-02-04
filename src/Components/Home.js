@@ -21,7 +21,7 @@ export default function Home() {
           {/* Your Trusted Legal Partner, Just a Contact Away */}
           Providing reliable legal guidance to Sri Lankans worldwide
           </h1>
-          <p className="primary-text" style={{   fontSize: '20px'}}>
+          <p className="primary-text" style={{   fontSize: '20px' , color: 'black'}}>
           {/* Our expert legal team handles the prep work, so you can focus on making confident decisions */}
           Our expert legal team handles all the prep work, from document research to strategy, so you can focus on making informed decisions with confidence
           </p>
